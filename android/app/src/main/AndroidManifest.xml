@@ -4,6 +4,7 @@
         android:label="flightkaracasxy"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
+
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -27,7 +28,9 @@
         </activity>
         <!-- Don't delete the meta-data below.
              This is used by the Flutter tool to generate GeneratedPluginRegistrant.java -->
-        <meta-data
+       <meta-data android:name="com.google.android.geo.API_KEY"
+           android:value="AIzaSyAlbLYdIe5xDYv6gHW5_skmn9pEsLinHnc"/>
+       <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
     </application>

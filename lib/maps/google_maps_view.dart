@@ -13,6 +13,7 @@ class GoogleMapsView extends StatefulWidget {
 class _GoogleMapsViewState extends State<GoogleMapsView> {
   @override
   Widget build(BuildContext context) {
+    GoogleMapController? googleMapController;
     final CameraPosition kartalPos =
         CameraPosition(zoom: 19, target: LatLng(40.9130116, 29.2094771));
 
@@ -49,20 +50,26 @@ class _GoogleMapsViewState extends State<GoogleMapsView> {
     }
 
     return Scaffold(
+        floatingActionButton: FloatingActionButton(onPressed: (() {
+          googleMapController!.moveCamera(CameraUpdate.newCameraPosition(
+              CameraPosition(target: LatLng(41.060684, 28.967169), zoom: 15)));
+        })),
         body: FutureBuilder(
-      future: _createMarkerImageFromAsset(context),
-      builder: (context, snapshot) {
-        if (snapshot.hasData) {
-          return GoogleMap(
-              mapType: MapType.normal,
-              initialCameraPosition: CameraPosition(
-                  target: LatLng(40.9130116, 29.2094771), zoom: 19),
-              onMapCreated: (controller) {},
-              markers: _setMarker());
-        } else {
-          return CircularProgressIndicator();
-        }
-      },
-    ));
+          future: _createMarkerImageFromAsset(context),
+          builder: (context, snapshot) {
+            if (snapshot.hasData) {
+              return GoogleMap(
+                  mapType: MapType.normal,
+                  initialCameraPosition: CameraPosition(
+                      target: LatLng(40.9130116, 29.2094771), zoom: 19),
+                  onMapCreated: (controller) {
+                    googleMapController = controller;
+                  },
+                  markers: _setMarker());
+            } else {
+              return CircularProgressIndicator();
+            }
+          },
+        ));
   }
 }
