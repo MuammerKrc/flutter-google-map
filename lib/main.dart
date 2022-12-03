@@ -1,16 +1,13 @@
-import 'dart:js';
-
-import 'package:flightkaracasxy/google_maps/management/google_management.dart';
-import 'package:flightkaracasxy/maps/google_maps_view.dart';
+import 'package:flightkaracasxy/google_maps/management/flight_management.dart';
+import 'package:flightkaracasxy/google_maps/view/google_maps_view.dart';
 import 'package:flutter/material.dart';
 
-import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 void main() {
   runApp(
     MultiProvider(providers: [
-      ChangeNotifierProvider(create: (context) => GoogleManagement()),
+      ChangeNotifierProvider(create: (context) => FlightManagement()),
     ], child: const MyApp()),
   );
 }
