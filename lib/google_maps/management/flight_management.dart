@@ -1,4 +1,4 @@
-import 'package:flightkaracasxy/core/management_core/base_management.dart';
+import 'package:flightkaracasxy/core/managements/base_management.dart';
 import 'package:flightkaracasxy/core/model/flight_model.dart';
 import 'package:flightkaracasxy/google_maps/service/google_service.dart';
 

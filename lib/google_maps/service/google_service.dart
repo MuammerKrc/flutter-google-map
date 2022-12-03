@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:flightkaracasxy/core/model/flight_model.dart';
-import 'package:flightkaracasxy/core/service_core/service_core.dart';
+import 'package:flightkaracasxy/core/services/service_core.dart';
 
 abstract class IGoogleService extends baseService {
   final String _flightUrl = "maps.json";
@@ -16,11 +16,12 @@ class GoogleService extends IGoogleService {
     var response = await dio.get(_flightUrl);
 
     if (response.statusCode == HttpStatus.ok && response.data != null) {
-      var dats = response.data
+      return response.data
           .map((e) => FlightModel.fromJson(e))
           .cast<FlightModel>()
           .toList();
     }
+
     return <FlightModel>[];
   }
 }

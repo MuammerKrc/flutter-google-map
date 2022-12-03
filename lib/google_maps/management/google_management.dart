@@ -1,4 +1,4 @@
-import 'package:flightkaracasxy/core/management_core/base_management.dart';
+import 'package:flightkaracasxy/core/managements/base_management.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
@@ -9,7 +9,7 @@ class GoogleManagement extends BaseManagement {
   }
   GoogleMapController? googleMapController;
   final CameraPosition kartalPos =
-      const CameraPosition(zoom: 19, target: LatLng(40.9130116, 29.2094771));
+      const CameraPosition(zoom: 7, target: LatLng(40.9130116, 29.2094771));
 
   BitmapDescriptor? bikingIcon;
 
@@ -33,6 +33,7 @@ class GoogleManagement extends BaseManagement {
     if (bikingIcon == null) {
       final ImageConfiguration imageConfiguration =
           createLocalImageConfiguration(context);
+
       var bitmap = await BitmapDescriptor.fromAssetImage(
           ImageConfiguration(
             devicePixelRatio: 0.2,

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../enums/management_enum.dart';
-import '../management_core/base_management.dart';
+import '../managements/base_management.dart';
 
 class GetFutureView<TManagement extends BaseManagement>
     extends StatelessWidget {

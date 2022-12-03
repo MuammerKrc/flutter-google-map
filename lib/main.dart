@@ -1,7 +1,6 @@
 import 'package:flightkaracasxy/google_maps/management/flight_management.dart';
 import 'package:flightkaracasxy/google_maps/view/google_maps_view.dart';
 import 'package:flutter/material.dart';
-
 import 'package:provider/provider.dart';
 
 void main() {
@@ -17,6 +16,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(title: 'Google Map', home: GoogleMapsView());
+    return const MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Google Map',
+        home: GoogleMapsView());
   }
 }
