@@ -1,4 +1,3 @@
-import 'package:flightkaracasxy/core/model/detail_model.dart';
 import 'package:flightkaracasxy/core/model/tags_model.dart';
 
 class DetailModel {
@@ -25,7 +24,7 @@ class DetailModel {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['description'] = this.description;
     data['name'] = this.name;
     data['photoUrl'] = this.photoUrl;

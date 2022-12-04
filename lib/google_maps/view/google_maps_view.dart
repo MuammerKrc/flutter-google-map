@@ -1,6 +1,3 @@
-import 'dart:math';
-
-import 'package:flightkaracasxy/core/model/detail_model.dart';
 import 'package:flightkaracasxy/core/model/flight_model.dart';
 import 'package:flightkaracasxy/core/widgets/appbars/app_bar.dart';
 import 'package:flightkaracasxy/core/widgets/cards/ped_card.dart';
